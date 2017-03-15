@@ -11,8 +11,7 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     var user = User()
-    var fbDetails = NSDictionary()
-    var gatheredInfo = Bool()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,66 +36,48 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         else {
             if result.grantedPermissions.contains("public_profile") {
-                let _ = retrieveInformation()
+                retrieveInformation()
             }
         }
         print("Successfully logged in within Facebook...")
     }
     
-    func retrieveInformation() -> User {
+    func retrieveInformation() {
         FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, id, name, first_name, gender, birthday, location"]).start(completionHandler: { (connection, result, error) -> Void in
             if (error == nil) {
-                self.gatheredInfo = true
-                self.fbDetails = result as! NSDictionary
-                self.user = self.initializeUser(fbDetails: self.fbDetails)
+                let fbDetails = result as! NSDictionary
+                self.user = self.initializeUser(fbDetails: fbDetails)
+                SharedManager.sharedInstance.user = self.user
                 self.user.printing()
+                self.performSegue(withIdentifier: "toUserInformation", sender: self)
             }
         })
-        return self.user
     }
     
     func initializeUser(fbDetails: NSDictionary) -> User {
-        var birthday = ""
-        var location = ""
-        var first_name = ""
-        var name = ""
-        var gender = ""
-        var email = ""
+        var birthday = "birthday"
+        var location = "location"
+        var first_name = "first_name"
+        var name = "name"
+        var gender = "gender"
+        var email = "email"
         if  let _ = fbDetails.value(forKey: "birthday") as? String {
             birthday = fbDetails.value(forKey: "birthday") as! String
-        }
-        else {
-            birthday = "birthday"
         }
         if let _ = fbDetails.value(forKey: "location") as? String {
             location = fbDetails.value(forKey: "location") as! String
         }
-        else {
-            location = "location"
-        }
         if let _ = fbDetails.value(forKey: "gender") as? String {
             gender = fbDetails.value(forKey: "gender") as! String
-        }
-        else {
-            gender = "gender"
         }
         if let _ = fbDetails.value(forKey: "first_name") as? String {
             first_name = fbDetails.value(forKey: "first_name") as! String
         }
-        else {
-            first_name = "first_name"
-        }
         if let _ = fbDetails.value(forKey: "email") as? String {
             email = fbDetails.value(forKey: "email") as! String
         }
-        else {
-            email = "email"
-        }
         if let _ = fbDetails.value(forKey: "name") as? String {
             name = fbDetails.value(forKey: "name") as! String
-        }
-        else {
-            name = "name"
         }
         let user = User(gender: gender, name: name, email: email, birthday: birthday, location: location, first_name: first_name);
          return user

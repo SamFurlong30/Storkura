@@ -15,6 +15,7 @@ class User {
     var gender: String!
     var birthday: String!
     var location: String!
+    var userInformation = [String]()
     
     init(){}
     
@@ -34,6 +35,22 @@ class User {
         print(self.first_name)
         print(self.gender)
         print(self.location)
+    }
+    
+    func toArray() -> [String] {
+        userInformation += [self.name, self.gender, self.email, self.birthday, self.location]
+        return userInformation
+    }
+    
+    func update(array: [String]) {
+        self.userInformation = array
+        self.name = array[0]
+        let namearray = array[0].components(separatedBy: " ")
+        self.first_name = namearray[0]
+        self.gender = array[1]
+        self.email = array[2]
+        self.birthday = array[3]
+        self.location = array[4]
     }
 
 }
