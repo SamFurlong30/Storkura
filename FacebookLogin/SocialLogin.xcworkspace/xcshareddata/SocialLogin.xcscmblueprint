@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "283045D3B2A2C3B00B005256FD55F31E43D8E72B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "70FE19293F698EAF5B9205C8071ABE00448D70CC" : 9223372036854775807,
+    "283045D3B2A2C3B00B005256FD55F31E43D8E72B" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8B635D86-5515-43EB-895F-B5F2E1D6844F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "70FE19293F698EAF5B9205C8071ABE00448D70CC" : "",
+    "283045D3B2A2C3B00B005256FD55F31E43D8E72B" : "FacebookLogin\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SocialLogin",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SocialLogin.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:cathchi\/SocialLogin.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "283045D3B2A2C3B00B005256FD55F31E43D8E72B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:SamFurlong30\/Storkura.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "70FE19293F698EAF5B9205C8071ABE00448D70CC"
+    }
+  ]
+}
