@@ -27,6 +27,7 @@ class User {
         self.location = location
         self.first_name = first_name
         userInformation += [self.name, self.gender, self.email, self.birthday, self.location]
+
     }
     
     func printing() {
