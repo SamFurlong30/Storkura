@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		37B93230C34C2FED28C786B8 /* Pods_SocialLoginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F76D53A0ADBB5A88FCC7766 /* Pods_SocialLoginTests.framework */; };
+		C935430D1E773398000A6B3E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935430C1E773398000A6B3E /* User.swift */; };
 		C9B440181E56453500EAD8C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B440171E56453500EAD8C8 /* AppDelegate.swift */; };
 		C9B4401A1E56453500EAD8C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B440191E56453500EAD8C8 /* ViewController.swift */; };
 		C9B4401D1E56453500EAD8C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B4401B1E56453500EAD8C8 /* Main.storyboard */; };
 		C9B4401F1E56453500EAD8C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B4401E1E56453500EAD8C8 /* Assets.xcassets */; };
 		C9B440221E56453500EAD8C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B440201E56453500EAD8C8 /* LaunchScreen.storyboard */; };
 		C9B4402D1E56453500EAD8C8 /* SocialLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4402C1E56453500EAD8C8 /* SocialLoginTests.swift */; };
+		C9CFD7F61E799B8B00E9A038 /* SharedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFD7F51E799B8B00E9A038 /* SharedManager.swift */; };
+		C9CFD7F81E799F9B00E9A038 /* UserInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFD7F71E799F9B00E9A038 /* UserInformationTableViewController.swift */; };
+		C9CFD7FA1E79A02400E9A038 /* UserInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFD7F91E79A02400E9A038 /* UserInformationTableViewCell.swift */; };
 		F0FD75BD788363C4047DB1AE /* Pods_SocialLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F1D4E417313089BD002261 /* Pods_SocialLogin.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +38,7 @@
 		4E710F02D75A56B7DC701441 /* Pods-SocialLoginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLoginTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLoginTests/Pods-SocialLoginTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5AE0D87DC20781EA895CD488 /* Pods-SocialLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLogin/Pods-SocialLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		B90E8ED26B7CBDE03A8AF83C /* Pods-SocialLoginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLoginTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLoginTests/Pods-SocialLoginTests.release.xcconfig"; sourceTree = "<group>"; };
+		C935430C1E773398000A6B3E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = SocialLogin/User.swift; sourceTree = "<group>"; };
 		C939F0AE1E564D2E0091EE1C /* SocialLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialLogin.entitlements; sourceTree = "<group>"; };
 		C9B440141E56453500EAD8C8 /* SocialLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B440171E56453500EAD8C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +50,9 @@
 		C9B440281E56453500EAD8C8 /* SocialLoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialLoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B4402C1E56453500EAD8C8 /* SocialLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginTests.swift; sourceTree = "<group>"; };
 		C9B4402E1E56453500EAD8C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9CFD7F51E799B8B00E9A038 /* SharedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedManager.swift; sourceTree = "<group>"; };
+		C9CFD7F71E799F9B00E9A038 /* UserInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationTableViewController.swift; sourceTree = "<group>"; };
+		C9CFD7F91E79A02400E9A038 /* UserInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 		C9B4400B1E56453400EAD8C8 = {
 			isa = PBXGroup;
 			children = (
+				C935430C1E773398000A6B3E /* User.swift */,
 				C9B440161E56453500EAD8C8 /* SocialLogin */,
 				C9B4402B1E56453500EAD8C8 /* SocialLoginTests */,
 				C9B440151E56453500EAD8C8 /* Products */,
@@ -94,9 +103,12 @@
 				C9B440171E56453500EAD8C8 /* AppDelegate.swift */,
 				C9B440191E56453500EAD8C8 /* ViewController.swift */,
 				C9B4401B1E56453500EAD8C8 /* Main.storyboard */,
+				C9CFD7F91E79A02400E9A038 /* UserInformationTableViewCell.swift */,
+				C9CFD7F71E799F9B00E9A038 /* UserInformationTableViewController.swift */,
 				C9B4401E1E56453500EAD8C8 /* Assets.xcassets */,
 				C9B440201E56453500EAD8C8 /* LaunchScreen.storyboard */,
 				C9B440231E56453500EAD8C8 /* Info.plist */,
+				C9CFD7F51E799B8B00E9A038 /* SharedManager.swift */,
 			);
 			path = SocialLogin;
 			sourceTree = "<group>";
@@ -338,8 +350,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CFD7F61E799B8B00E9A038 /* SharedManager.swift in Sources */,
+				C9CFD7FA1E79A02400E9A038 /* UserInformationTableViewCell.swift in Sources */,
 				C9B4401A1E56453500EAD8C8 /* ViewController.swift in Sources */,
 				C9B440181E56453500EAD8C8 /* AppDelegate.swift in Sources */,
+				C935430D1E773398000A6B3E /* User.swift in Sources */,
+				C9CFD7F81E799F9B00E9A038 /* UserInformationTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
