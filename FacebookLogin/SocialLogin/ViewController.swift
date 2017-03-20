@@ -21,8 +21,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginView.center = view.center
         
         loginView.delegate = self
-        
-        
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
