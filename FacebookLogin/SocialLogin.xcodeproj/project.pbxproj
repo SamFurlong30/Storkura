@@ -18,6 +18,7 @@
 		C9CFD7F61E799B8B00E9A038 /* SharedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFD7F51E799B8B00E9A038 /* SharedManager.swift */; };
 		C9CFD7F81E799F9B00E9A038 /* UserInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFD7F71E799F9B00E9A038 /* UserInformationTableViewController.swift */; };
 		C9CFD7FA1E79A02400E9A038 /* UserInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFD7F91E79A02400E9A038 /* UserInformationTableViewCell.swift */; };
+		C9E7A5E51E86D6F000458151 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9E7A5E41E86D6F000458151 /* GoogleService-Info.plist */; };
 		F0FD75BD788363C4047DB1AE /* Pods_SocialLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F1D4E417313089BD002261 /* Pods_SocialLogin.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		C9CFD7F51E799B8B00E9A038 /* SharedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedManager.swift; sourceTree = "<group>"; };
 		C9CFD7F71E799F9B00E9A038 /* UserInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationTableViewController.swift; sourceTree = "<group>"; };
 		C9CFD7F91E79A02400E9A038 /* UserInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationTableViewCell.swift; sourceTree = "<group>"; };
+		C9E7A5E41E86D6F000458151 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Pods/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				C935430C1E773398000A6B3E /* User.swift */,
+				C9E7A5E41E86D6F000458151 /* GoogleService-Info.plist */,
 				C9B440161E56453500EAD8C8 /* SocialLogin */,
 				C9B4402B1E56453500EAD8C8 /* SocialLoginTests */,
 				C9B440151E56453500EAD8C8 /* Products */,
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B440221E56453500EAD8C8 /* LaunchScreen.storyboard in Resources */,
+				C9E7A5E51E86D6F000458151 /* GoogleService-Info.plist in Resources */,
 				C9B4401F1E56453500EAD8C8 /* Assets.xcassets in Resources */,
 				C9B4401D1E56453500EAD8C8 /* Main.storyboard in Resources */,
 			);

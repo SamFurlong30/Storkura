@@ -8,12 +8,14 @@
 
 import UIKit
 import FBSDKLoginKit
+import Firebase
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     var user = User()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        FIRApp.configure()
         
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         view.addSubview(loginView)
@@ -23,33 +25,17 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginView.delegate = self
     }
     
+//    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+//        // Override point for customization after application launch.
+//        
+//        // Use Firebase library to configure APIs
+//        FIRApp.configure()
+//        
+//        return true
+//    }
+    
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Did log out of Facebook")
-    }
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if error != nil {
-            print(error)
-            return
-        }
-        else {
-            if result.grantedPermissions.contains("public_profile") {
-                retrieveInformation()
-            }
-        }
-        print("Successfully logged in within Facebook...")
-    }
-    
-    func retrieveInformation() {
-        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, id, name, first_name, gender, birthday, location"]).start(completionHandler: { (connection, result, error) -> Void in
-            if (error == nil) {
-                let fbDetails = result as! NSDictionary
-                self.user = self.initializeUser(fbDetails: fbDetails)
-                SharedManager.sharedInstance.user = self.user
-                self.user.printing()
-                self.performSegue(withIdentifier: "toUserInformation", sender: self)
-            }
-        })
     }
     
     func initializeUser(fbDetails: NSDictionary) -> User {
@@ -78,8 +64,48 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             name = fbDetails.value(forKey: "name") as! String
         }
         let user = User(gender: gender, name: name, email: email, birthday: birthday, location: location, first_name: first_name);
-         return user
+        return user
+    }
+    
+    
+    func retrieveInformation() {
+        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, id, name, first_name, gender, birthday, location"]).start(completionHandler: { (connection, result, error) -> Void in
+            if (error == nil) {
+                let fbDetails = result as! NSDictionary
+                self.user = self.initializeUser(fbDetails: fbDetails)
+                SharedManager.sharedInstance.user = self.user
+                self.user.printing()
+                self.performSegue(withIdentifier: "toUserInformation", sender: self)
+            }
+        })
+    }
+    
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            // ...
+            if error != nil {
+                // ...
+                return
+            } else {
+                if result.grantedPermissions.contains("public_profile") {
+                    self.retrieveInformation()
+                }
+            }
+            
+            //        if error != nil {
+            //            print(error)
+            //            return
+            //        }
+            //        else {
+            //            if result.grantedPermissions.contains("public_profile") {
+            //                retrieveInformation()
+            //            }
+            //        }
+            print("Successfully logged in within Facebook...")
+        }
     }
     
 }
-
