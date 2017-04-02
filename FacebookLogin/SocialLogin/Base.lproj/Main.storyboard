@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="138" y="-90"/>
         </scene>
-        <!--User Information Table View Controller-->
+        <!--More Information-->
         <scene sceneID="ich-qb-Qj5">
             <objects>
                 <tableViewController id="5sf-sP-iYQ" customClass="UserInformationTableViewController" customModule="SocialLogin" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,19 +74,22 @@
                             <outlet property="delegate" destination="5sf-sP-iYQ" id="uLH-8C-7nK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="WSv-ae-OiK"/>
-                    <connections>
-                        <segue destination="we1-AT-DO8" kind="show" id="RQu-8b-8oO"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="More Information" id="WSv-ae-OiK">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="6sy-PG-PT3">
+                            <connections>
+                                <segue destination="we1-AT-DO8" kind="show" id="MP0-dd-Kq3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2SK-5y-Ktv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="-90"/>
+            <point key="canvasLocation" x="914" y="-90"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Feed Table View Controller-->
         <scene sceneID="RAR-3x-WFf">
             <objects>
-                <tableViewController id="we1-AT-DO8" sceneMemberID="viewController">
+                <tableViewController id="we1-AT-DO8" customClass="FeedTableViewController" customModule="SocialLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="XuZ-wv-egq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,11 +108,10 @@
                                             <state key="normal" title="Button"/>
                                             <connections>
                                                 <action selector="showFeed:" destination="XXl-zZ-w47" eventType="touchUpInside" id="lVY-Wb-Vod"/>
-                                                <segue destination="TD1-q5-LWF" kind="show" id="ms8-5f-v6Z"/>
                                             </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6h-Kc-7Wa">
-                                            <rect key="frame" x="99" y="0.0" width="105" height="90"/>
+                                            <rect key="frame" x="99" y="-1" width="105" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -125,38 +127,21 @@
                             <outlet property="delegate" destination="we1-AT-DO8" id="U0B-AF-44o"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Create New Feed " id="vVS-3D-x72">
+                            <connections>
+                                <action selector="CreateNewFeed:" destination="we1-AT-DO8" id="6JU-i9-kbk"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="NewFeedButton" destination="vVS-3D-x72" id="vYA-WP-F7L"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgP-dV-NkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="-90"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Y4l-tn-EPL">
-            <objects>
-                <tableViewController id="TD1-q5-LWF" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gyp-V5-U7A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="G0d-wX-aUp">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G0d-wX-aUp" id="2es-m3-RGQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="TD1-q5-LWF" id="Ws3-k1-rCm"/>
-                            <outlet property="delegate" destination="TD1-q5-LWF" id="Ghg-cq-d9P"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cgc-VN-9BQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2881" y="-90"/>
+            <point key="canvasLocation" x="1930" y="-90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2e2-gN-8Te">
@@ -172,7 +157,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2p-if-hOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671" y="-90"/>
+            <point key="canvasLocation" x="-652" y="-90"/>
         </scene>
     </scenes>
 </document>
