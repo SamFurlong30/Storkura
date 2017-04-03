@@ -59,6 +59,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         var name = "name"
         var gender = "gender"
         var email = "email"
+        var id = "id"
         if  let _ = fbDetails.value(forKey: "birthday") as? String {
             birthday = fbDetails.value(forKey: "birthday") as! String
         }
@@ -77,7 +78,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         if let _ = fbDetails.value(forKey: "name") as? String {
             name = fbDetails.value(forKey: "name") as! String
         }
-        let user = User(gender: gender, name: name, email: email, birthday: birthday, location: location, first_name: first_name);
+        if let _ = fbDetails.value(forKey: "id") as? String {
+            id = fbDetails.value(forKey: "id") as! String
+        }
+        let user = User(gender: gender, name: name, email: email, birthday: birthday, location: location, first_name: first_name, id: id);
          return user
     }
     

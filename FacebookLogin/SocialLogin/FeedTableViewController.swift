@@ -31,11 +31,11 @@ class FeedTableViewController: UITableViewController {
             
             var newItems = [NSString]()
             for item in snapshot.children{
-                 newItems.append((item as! FIRDataSnapshot).key as NSString);
+                 newItems.append((item as! FIRDataSnapshot).childSnapshot(forPath: "/name").value as! NSString);
             }
             self.items = newItems
             self.tableView.reloadData()
-            print("listener triggered");
+            
         }
     }
     override func didReceiveMemoryWarning() {
@@ -82,7 +82,8 @@ class FeedTableViewController: UITableViewController {
                 return
             }
             else{
-                feedRef.child((alertController.textFields?[0].text)!).child("messages").setValue("Hi");
+                let myString = String(describing: alertController.textFields?[0].text?.hashValue)
+                feedRef.child(myString).child("name").setValue(alertController.textFields?[0].text)
 
             }
         }

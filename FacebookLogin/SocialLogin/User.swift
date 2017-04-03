@@ -15,17 +15,19 @@ class User {
     var gender: String!
     var birthday: String!
     var location: String!
+    var id: String!
     var userInformation = [String]()
     
     init(){}
     
-    init(gender: String!, name: String!, email: String!, birthday: String!, location: String!, first_name: String!) {
+    init(gender: String!, name: String!, email: String!, birthday: String!, location: String!, first_name: String!, id: String!) {
         self.gender = gender
         self.name = name
         self.email = email
         self.birthday = birthday
         self.location = location
         self.first_name = first_name
+        self.id = id
         userInformation += [self.name, self.gender, self.email, self.birthday, self.location]
 
     }
@@ -37,6 +39,7 @@ class User {
         print(self.first_name)
         print(self.gender)
         print(self.location)
+        print(self.id)
     }
     
     func toArray() -> [String] {

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialLogin/FeedTableViewController.swift"
-            timestampString = "512945666.59883"
+            timestampString = "512947671.177521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "CreateNewFeed(_:)"
             landmarkType = "7">
          </BreakpointContent>
