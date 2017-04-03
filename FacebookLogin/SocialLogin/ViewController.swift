@@ -25,15 +25,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginView.delegate = self
     }
     
-//    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-//        // Override point for customization after application launch.
-//        
-//        // Use Firebase library to configure APIs
-//        FIRApp.configure()
-//        
-//        return true
-//    }
-    
+
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Did log out of Facebook")
     }
@@ -94,16 +86,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                     self.retrieveInformation()
                 }
             }
-            
-            //        if error != nil {
-            //            print(error)
-            //            return
-            //        }
-            //        else {
-            //            if result.grantedPermissions.contains("public_profile") {
-            //                retrieveInformation()
-            //            }
-            //        }
             print("Successfully logged in within Facebook...")
         }
     }
