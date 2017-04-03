@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SocialLogin/FeedTableViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:SocialLogin.xcodeproj">
    </FileRef>
    <FileRef

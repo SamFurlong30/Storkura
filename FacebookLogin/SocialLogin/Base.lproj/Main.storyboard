@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="914" y="-90"/>
         </scene>
-        <!--Feed Table View Controller-->
+        <!--My Feeds-->
         <scene sceneID="RAR-3x-WFf">
             <objects>
                 <tableViewController id="we1-AT-DO8" customClass="FeedTableViewController" customModule="SocialLogin" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XXl-zZ-w47" customClass="FeedTableViewCell" customModule="SocialLogin" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedTableViewCellIdentifier" id="XXl-zZ-w47" customClass="FeedTableViewCell" customModule="SocialLogin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XXl-zZ-w47" id="xJA-wb-Iqm">
@@ -127,13 +127,14 @@
                             <outlet property="delegate" destination="we1-AT-DO8" id="U0B-AF-44o"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Create New Feed " id="vVS-3D-x72">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="My Feeds" id="OEB-wP-BM7">
+                        <barButtonItem key="leftBarButtonItem" title="Create New Feed " id="vVS-3D-x72">
                             <connections>
                                 <action selector="CreateNewFeed:" destination="we1-AT-DO8" id="6JU-i9-kbk"/>
                             </connections>
                         </barButtonItem>
-                    </toolbarItems>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="NewFeedButton" destination="vVS-3D-x72" id="vYA-WP-F7L"/>
@@ -141,13 +142,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgP-dV-NkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788" y="-90"/>
+            <point key="canvasLocation" x="2031" y="-116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2e2-gN-8Te">
             <objects>
                 <navigationController id="6GU-Ir-C5B" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zQL-n6-Qm3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zQL-n6-Qm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

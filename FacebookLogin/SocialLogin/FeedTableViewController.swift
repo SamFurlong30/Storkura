@@ -31,10 +31,11 @@ class FeedTableViewController: UITableViewController {
             
             var newItems = [NSString]()
             for item in snapshot.children{
-                 newItems.append((item as! FIRDataSnapshot).value as! NSString);
+                 newItems.append((item as! FIRDataSnapshot).key as NSString);
             }
             self.items = newItems
             self.tableView.reloadData()
+            print("listener triggered");
         }
     }
     override func didReceiveMemoryWarning() {
@@ -46,18 +47,18 @@ class FeedTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "FeedTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FeedTableViewCell else{
+        let cellIdentifier = "FeedTableViewCellIdentifier"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FeedTableViewCell else {
             fatalError("Thedeqeued cell is not an instance of FeedTableViewCell")
         }
         let feed = items[indexPath.row]
@@ -81,7 +82,7 @@ class FeedTableViewController: UITableViewController {
                 return
             }
             else{
-                feedRef.child((alertController.textFields?[0].text)!)
+                feedRef.child((alertController.textFields?[0].text)!).child("messages").setValue("Hi");
 
             }
         }

@@ -11,18 +11,15 @@ import FBSDKCoreKit
 import Firebase
 import FirebaseAnalytics
 import FirebaseDatabase
-var ref: FIRDatabaseReference!;
-
+var ref: FIRDatabaseReference!
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FIRApp.configure()
         ref = FIRDatabase.database().reference()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        ref.child("users").child("cathy").setValue("chi")
         return true
     }
     
