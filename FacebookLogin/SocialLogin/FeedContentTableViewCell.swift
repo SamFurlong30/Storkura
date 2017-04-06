@@ -1,20 +1,18 @@
 //
-//  FeedTableViewCell.swift
+//  FeedContentTableViewCell.swift
 //  SocialLogin
 //
-//  Created by Blake Becerra on 3/30/17.
+//  Created by Cathy Chi on 4/6/17.
 //  Copyright © 2017 Cathy Chi. All rights reserved.
 //
 
 import UIKit
 
-class FeedTableViewCell: UITableViewCell {
+class FeedContentTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var postLabel: UILabel!
 
-    //MARK: Properties
-    
-    @IBOutlet weak var feedButton: UIButton!
-    @IBOutlet weak var feedImage: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,4 +23,5 @@ class FeedTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 }

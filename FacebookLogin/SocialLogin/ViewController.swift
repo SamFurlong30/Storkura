@@ -81,6 +81,17 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         if let _ = fbDetails.value(forKey: "id") as? String {
             id = fbDetails.value(forKey: "id") as! String
         }
+        
+        userRef.observeSingleEvent(of: .value, with: {snapshot in
+            if snapshot.hasChild(id) {
+                userRef = userRef.child(id)
+            }
+            else{
+                userRef.child(id).child("name").setValue(name)
+                userRef = userRef.child(id)
+            }
+        })
+        
         let user = User(gender: gender, name: name, email: email, birthday: birthday, location: location, first_name: first_name, id: id);
          return user
     }

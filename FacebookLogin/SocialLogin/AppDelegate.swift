@@ -12,6 +12,8 @@ import Firebase
 import FirebaseAnalytics
 import FirebaseDatabase
 var ref: FIRDatabaseReference!
+var userRef: FIRDatabaseReference!
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -19,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         ref = FIRDatabase.database().reference()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        ref.child("users").child("cathy").setValue("chi")
+        userRef = ref.child("users")
         return true
     }
     
