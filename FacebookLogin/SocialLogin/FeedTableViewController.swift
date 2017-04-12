@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 var feedRef: FIRDatabaseReference!
-
+var feedContentRef: FIRDatabaseReference!
 
 class FeedTableViewController: UITableViewController {
     var items = [NSString]()
@@ -17,7 +17,6 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         feedRef = userRef.child("feeds");
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -31,7 +30,7 @@ class FeedTableViewController: UITableViewController {
             
             var newItems = [NSString]()
             for item in snapshot.children{
-                 newItems.append((item as! FIRDataSnapshot).value as! NSString);
+                newItems.append((item as! FIRDataSnapshot).value as! NSString);
             }
             self.items = newItems
             self.tableView.reloadData()
@@ -63,7 +62,9 @@ class FeedTableViewController: UITableViewController {
             fatalError("The deqeued cell is not an instance of FeedTableViewCell")
         }
         let feed = items[indexPath.row]
+        
         cell.feedButton.setTitle(feed as String, for: [])
+
         return cell
     }
     @IBOutlet weak var NewFeedButton: UIBarButtonItem!
@@ -83,11 +84,11 @@ class FeedTableViewController: UITableViewController {
                 return
             }
             else{
-                let myString = String(describing: alertController.textFields?[0].text?.hashValue)
-                feedRef.child(myString).child("name").setValue(alertController.textFields?[0].text)
-
-            }
+                feedRef.child((alertController.textFields?[0].text)!).setValue(alertController.textFields?[0].text)
+                ref.child("feed").child((alertController.textFields?[0].text)!).child("post").child("1").setValue("fuck");
         }
+        }
+        
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil);
     }

@@ -10,16 +10,42 @@ import UIKit
 
 class FeedContentTableViewController: UITableViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+       
+    }
+  
+    @IBAction func Post(_ sender: Any) {
+        let alertController = UIAlertController(title: "Post", message: "Please enter the text for Your Post", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertController.addTextField {
+            (txtFeed) -> Void in
+            txtFeed.placeholder = "<Post Text Here>"
+        }
+     
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
+            (action) -> Void in
+            alertController.dismiss(animated: true, completion:nil);
+            //if the child exists add it if not do something
+            if alertController.textFields?[0].text == nil{
+                return
+            }
+            else{
+                let name = alertController.textFields?[0].text¶••¶
+                let dateFormatter = DateFormatter();
+                feedContentRef.child("post").child(dateFormatter.string(from: Date())).child("text").setValue(name! as NSString)
+            }
+        }
+        
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil);
     }
 
+    @IBAction func Filter(_ sender: Any) {
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

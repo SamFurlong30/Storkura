@@ -15,9 +15,19 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var feedButton: UIButton!
     @IBOutlet weak var feedImage: UIImageView!
     
+    @IBAction func buttonEvent(_ sender: Any) {
+        do{
+        feedContentRef = ref.child("feed").child((feedButton.titleLabel?.text)!);
+        }
+        catch let error{
+            
+        }
+    
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+       
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
