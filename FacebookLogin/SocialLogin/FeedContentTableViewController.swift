@@ -33,7 +33,7 @@ class FeedContentTableViewController: UITableViewController {
                 return
             }
             else{
-                let name = alertController.textFields?[0].text¶••¶
+                let name = alertController.textFields?[0].text
                 let dateFormatter = DateFormatter();
                 feedContentRef.child("post").child(dateFormatter.string(from: Date())).child("text").setValue(name! as NSString)
             }
