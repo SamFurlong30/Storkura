@@ -7,13 +7,46 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-class FeedContentTableViewController: UITableViewController {
+class FeedContentTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    var items = [NSString]()
+    var pickerViewData = [NSString]()
 
+    @IBOutlet weak var settingsPickerView: UIPickerView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
+    
+    
+    @IBAction func settingsButton(_ sender: Any) {
+        if (settingsPickerView.isHidden){
+            settingsPickerView.isHidden = false
+            
+        }
+        else{
+            settingsPickerView.isHidden = true
+        
+
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        settingsPickerView.dataSource = self
+        settingsPickerView.delegate = self
+        settingsPickerView.isHidden = true
+        pickerViewData = ["Add User", "Filter Posts"]
+        
+        feedContentRef.child("post").observe(.value){ (snapshot : FIRDataSnapshot!) in
+            
+            var newItems = [NSString]()
+            for item in snapshot.children {
+                let snap = item as! FIRDataSnapshot
+                newItems.append(snap.childSnapshot(forPath: "text").value as! NSString);
+            }
+            self.items = newItems
+            self.tableView.reloadData()
+        }
+        
     }
   
     @IBAction func Post(_ sender: Any) {
@@ -33,10 +66,14 @@ class FeedContentTableViewController: UITableViewController {
                 return
             }
             else{
-                let name = alertController.textFields?[0].text
-                let dateFormatter = DateFormatter();
-                feedContentRef.child("post").child(dateFormatter.string(from: Date())).child("text").setValue(name! as NSString)
+                let name = alertController.textFields?[0].text!
+                let date = Date()
+                let timeInterval = date.timeIntervalSince1970
+                let myTime = Int(timeInterval)
+                let myTimeString = String(myTime)
+                feedContentRef.child("post").child(myTimeString).child("text").setValue(name)
             }
+
         }
         
         
@@ -50,6 +87,18 @@ class FeedContentTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerViewData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerViewData[row] as String
+    }
 
     // MARK: - Table view data source
 
@@ -60,16 +109,18 @@ class FeedContentTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return items.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedContentTableViewCellIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedContentTableViewCellIdentifier", for: indexPath) as? FeedContentTableViewCell
+        
+        let feed = items[indexPath.row]
+        print(feed as String)
+        cell?.postLabel.text = feed as String
+        cell?.nameLabel.text = SharedManager.sharedInstance.user.name
+        return cell!
     }
     
 
