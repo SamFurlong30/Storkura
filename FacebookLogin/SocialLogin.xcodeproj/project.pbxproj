@@ -24,6 +24,8 @@
 		C9CFD7F61E799B8B00E9A038 /* SharedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFD7F51E799B8B00E9A038 /* SharedManager.swift */; };
 		C9CFD7F81E799F9B00E9A038 /* UserInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFD7F71E799F9B00E9A038 /* UserInformationTableViewController.swift */; };
 		C9CFD7FA1E79A02400E9A038 /* UserInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFD7F91E79A02400E9A038 /* UserInformationTableViewCell.swift */; };
+		C9E6AC371E9FEFB4008241D8 /* UserSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E6AC361E9FEFB4008241D8 /* UserSelectionTableViewCell.swift */; };
+		C9E6AC391E9FEFCB008241D8 /* UserSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E6AC381E9FEFCB008241D8 /* UserSelectionTableViewController.swift */; };
 		C9FFBEA01E96D8D800FC3C66 /* FeedContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFBE9F1E96D8D800FC3C66 /* FeedContentTableViewController.swift */; };
 		C9FFBEA21E96D96600FC3C66 /* FeedContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFBEA11E96D96600FC3C66 /* FeedContentTableViewCell.swift */; };
 		F0FD75BD788363C4047DB1AE /* Pods_SocialLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F1D4E417313089BD002261 /* Pods_SocialLogin.framework */; };
@@ -67,6 +69,8 @@
 		C9CFD7F51E799B8B00E9A038 /* SharedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedManager.swift; sourceTree = "<group>"; };
 		C9CFD7F71E799F9B00E9A038 /* UserInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationTableViewController.swift; sourceTree = "<group>"; };
 		C9CFD7F91E79A02400E9A038 /* UserInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationTableViewCell.swift; sourceTree = "<group>"; };
+		C9E6AC361E9FEFB4008241D8 /* UserSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		C9E6AC381E9FEFCB008241D8 /* UserSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectionTableViewController.swift; sourceTree = "<group>"; };
 		C9FFBE9F1E96D8D800FC3C66 /* FeedContentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedContentTableViewController.swift; sourceTree = "<group>"; };
 		C9FFBEA11E96D96600FC3C66 /* FeedContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedContentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +124,8 @@
 				C9B440171E56453500EAD8C8 /* AppDelegate.swift */,
 				C9B440191E56453500EAD8C8 /* ViewController.swift */,
 				C9B4401B1E56453500EAD8C8 /* Main.storyboard */,
+				C9E6AC361E9FEFB4008241D8 /* UserSelectionTableViewCell.swift */,
+				C9E6AC381E9FEFCB008241D8 /* UserSelectionTableViewController.swift */,
 				54B0A7F31E8D95BC00C5BE7D /* FeedTableViewCell.swift */,
 				54A6C93F1E916FB40099F747 /* FeedTableViewController.swift */,
 				54A6C9411E9176820099F747 /* Feed.swift */,
@@ -375,12 +381,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E6AC371E9FEFB4008241D8 /* UserSelectionTableViewCell.swift in Sources */,
 				C9CFD7F61E799B8B00E9A038 /* SharedManager.swift in Sources */,
 				C9FFBEA01E96D8D800FC3C66 /* FeedContentTableViewController.swift in Sources */,
 				C9CFD7FA1E79A02400E9A038 /* UserInformationTableViewCell.swift in Sources */,
 				54B0A7F41E8D95BC00C5BE7D /* FeedTableViewCell.swift in Sources */,
 				54A6C9421E9176820099F747 /* Feed.swift in Sources */,
 				54E429E61E9164370071711C /* Constants.swift in Sources */,
+				C9E6AC391E9FEFCB008241D8 /* UserSelectionTableViewController.swift in Sources */,
 				C9B4401A1E56453500EAD8C8 /* ViewController.swift in Sources */,
 				C9FFBEA21E96D96600FC3C66 /* FeedContentTableViewCell.swift in Sources */,
 				C9B440181E56453500EAD8C8 /* AppDelegate.swift in Sources */,

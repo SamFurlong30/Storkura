@@ -9,32 +9,45 @@
 import UIKit
 import FirebaseDatabase
 
-class FeedContentTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class FeedContentTableViewController: UITableViewController {
     var items = [NSString]()
     var pickerViewData = [NSString]()
 
-    @IBOutlet weak var settingsPickerView: UIPickerView!
-    
-    
-    
-    @IBAction func settingsButton(_ sender: Any) {
-        if (settingsPickerView.isHidden){
-            settingsPickerView.isHidden = false
-            
-        }
-        else{
-            settingsPickerView.isHidden = true
+    @IBAction func Settings(_ sender: Any) {
+        let alertController = UIAlertController(title: "Settings", message: "Please select from the following options:", preferredStyle: UIAlertControllerStyle.alert)
         
-
+        let addUser = UIAlertAction(title: "Add Users", style: UIAlertActionStyle.default){
+            (action) -> Void in
+            self.performSegue(withIdentifier: "toUserSelection", sender: self)
         }
+        let filter = UIAlertAction(title: "Filter Posts", style: UIAlertActionStyle.default) { (action) -> Void in
+        }
+        alertController.addAction(addUser)
+        alertController.addAction(filter)
+        self.present(alertController, animated: true, completion: nil);
     }
+    //@IBOutlet weak var settingsPickerView: UIPickerView!
+    
+    
+    
+//    @IBAction func settingsButton(_ sender: Any) {
+//        if (settingsPickerView.isHidden){
+//            settingsPickerView.isHidden = false
+//            
+//        }
+//        else{
+//            settingsPickerView.isHidden = true
+//        
+//
+//        }
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        settingsPickerView.dataSource = self
-        settingsPickerView.delegate = self
-        settingsPickerView.isHidden = true
-        pickerViewData = ["Add User", "Filter Posts"]
+//        settingsPickerView.dataSource = self
+//        settingsPickerView.delegate = self
+//        settingsPickerView.isHidden = true
+//        pickerViewData = ["Add User", "Filter Posts"]
 //        var toolBar = UIToolbar();
 //        toolBar.barStyle = UIBarStyle.default
 //        toolBar.isTranslucent = true
@@ -95,23 +108,23 @@ class FeedContentTableViewController: UITableViewController, UIPickerViewDataSou
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerViewData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerViewData[row] as String
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if (pickerViewData[row] == "Add User") {
-            print("hi")
-        }
-    }
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//    
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return pickerViewData.count
+//    }
+//    
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return pickerViewData[row] as String
+//    }
+//    
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        if (pickerViewData[row] == "Add User") {
+//            print("hi")
+//        }
+//    }
 
     // MARK: - Table view data source
 
@@ -130,7 +143,6 @@ class FeedContentTableViewController: UITableViewController, UIPickerViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedContentTableViewCellIdentifier", for: indexPath) as? FeedContentTableViewCell
         
         let feed = items[indexPath.row]
-        print(feed as String)
         cell?.postLabel.text = feed as String
         cell?.nameLabel.text = SharedManager.sharedInstance.user.name
         return cell!
