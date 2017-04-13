@@ -217,7 +217,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eb2-59-Ch9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Item" id="Asb-IU-TNr"/>
             </objects>
-            <point key="canvasLocation" x="3080.8000000000002" y="-153.37331334332833"/>
+            <point key="canvasLocation" x="3548" y="-248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2e2-gN-8Te">

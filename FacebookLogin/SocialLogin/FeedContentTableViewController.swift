@@ -35,7 +35,14 @@ class FeedContentTableViewController: UITableViewController, UIPickerViewDataSou
         settingsPickerView.delegate = self
         settingsPickerView.isHidden = true
         pickerViewData = ["Add User", "Filter Posts"]
-        
+//        var toolBar = UIToolbar();
+//        toolBar.barStyle = UIBarStyle.default
+//        toolBar.isTranslucent = true
+//        toolBar.sizeToFit()
+//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: Selector(("donePicker")))
+//        toolBar.setItems([doneButton], animated:true)
+//        toolBar.isUserInteractionEnabled = true
+//        settingsPick
         feedContentRef.child("post").observe(.value){ (snapshot : FIRDataSnapshot!) in
             
             var newItems = [NSString]()
@@ -98,6 +105,12 @@ class FeedContentTableViewController: UITableViewController, UIPickerViewDataSou
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerViewData[row] as String
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (pickerViewData[row] == "Add User") {
+            print("hi")
+        }
     }
 
     // MARK: - Table view data source
