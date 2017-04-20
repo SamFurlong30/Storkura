@@ -12,6 +12,7 @@
 		54A6C9421E9176820099F747 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A6C9411E9176820099F747 /* Feed.swift */; };
 		54B0A7F41E8D95BC00C5BE7D /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0A7F31E8D95BC00C5BE7D /* FeedTableViewCell.swift */; };
 		54E429E61E9164370071711C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E429E51E9164370071711C /* Constants.swift */; };
+		BCCB4C371EA838D20005726F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCCB4C361EA838D20005726F /* GoogleService-Info.plist */; };
 		C935430D1E773398000A6B3E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935430C1E773398000A6B3E /* User.swift */; };
 		C939E4561E9F0DE400B913B0 /* FeedSettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939E4551E9F0DE400B913B0 /* FeedSettingsPickerView.swift */; };
 		C99202BB1EA882D900BFF7CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C99202BA1EA882D900BFF7CD /* GoogleService-Info.plist */; };
@@ -52,6 +53,7 @@
 		54E429E51E9164370071711C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5AE0D87DC20781EA895CD488 /* Pods-SocialLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLogin/Pods-SocialLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		B90E8ED26B7CBDE03A8AF83C /* Pods-SocialLoginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLoginTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLoginTests/Pods-SocialLoginTests.release.xcconfig"; sourceTree = "<group>"; };
+		BCCB4C361EA838D20005726F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C935430C1E773398000A6B3E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = SocialLogin/User.swift; sourceTree = "<group>"; };
 		C939E4551E9F0DE400B913B0 /* FeedSettingsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedSettingsPickerView.swift; sourceTree = "<group>"; };
 		C939F0AE1E564D2E0091EE1C /* SocialLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialLogin.entitlements; sourceTree = "<group>"; };
@@ -98,7 +100,11 @@
 		C9B4400B1E56453400EAD8C8 = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				C99202BA1EA882D900BFF7CD /* GoogleService-Info.plist */,
+=======
+				BCCB4C361EA838D20005726F /* GoogleService-Info.plist */,
+>>>>>>> b6ecbcaeda8f582348e2ac4ec52a209dc17d7dcc
 				C935430C1E773398000A6B3E /* User.swift */,
 				C9B440161E56453500EAD8C8 /* SocialLogin */,
 				C9B4402B1E56453500EAD8C8 /* SocialLoginTests */,
@@ -268,7 +274,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B440221E56453500EAD8C8 /* LaunchScreen.storyboard in Resources */,
+<<<<<<< HEAD
 				C99202BB1EA882D900BFF7CD /* GoogleService-Info.plist in Resources */,
+=======
+				BCCB4C371EA838D20005726F /* GoogleService-Info.plist in Resources */,
+>>>>>>> b6ecbcaeda8f582348e2ac4ec52a209dc17d7dcc
 				C9B4401F1E56453500EAD8C8 /* Assets.xcassets in Resources */,
 				C9B4401D1E56453500EAD8C8 /* Main.storyboard in Resources */,
 			);
