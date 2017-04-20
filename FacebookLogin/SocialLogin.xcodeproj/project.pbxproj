@@ -12,10 +12,13 @@
 		54A6C9421E9176820099F747 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A6C9411E9176820099F747 /* Feed.swift */; };
 		54B0A7F41E8D95BC00C5BE7D /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0A7F31E8D95BC00C5BE7D /* FeedTableViewCell.swift */; };
 		54E429E61E9164370071711C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E429E51E9164370071711C /* Constants.swift */; };
-		BCCB4C371EA838D20005726F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCCB4C361EA838D20005726F /* GoogleService-Info.plist */; };
 		C935430D1E773398000A6B3E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935430C1E773398000A6B3E /* User.swift */; };
 		C939E4561E9F0DE400B913B0 /* FeedSettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939E4551E9F0DE400B913B0 /* FeedSettingsPickerView.swift */; };
-		C99202BB1EA882D900BFF7CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C99202BA1EA882D900BFF7CD /* GoogleService-Info.plist */; };
+		C956F95D1EA8880B007996AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C956F95C1EA8880B007996AA /* GoogleService-Info.plist */; };
+		C956F95F1EA8888B007996AA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956F95E1EA8888B007996AA /* ChatViewController.swift */; };
+		C956F9631EA88895007996AA /* MessagesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956F9601EA88895007996AA /* MessagesListTableViewController.swift */; };
+		C956F9641EA88895007996AA /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956F9611EA88895007996AA /* Channel.swift */; };
+		C956F9651EA88895007996AA /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956F9621EA88895007996AA /* CreateChannelCell.swift */; };
 		C9B440181E56453500EAD8C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B440171E56453500EAD8C8 /* AppDelegate.swift */; };
 		C9B4401A1E56453500EAD8C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B440191E56453500EAD8C8 /* ViewController.swift */; };
 		C9B4401D1E56453500EAD8C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B4401B1E56453500EAD8C8 /* Main.storyboard */; };
@@ -53,11 +56,14 @@
 		54E429E51E9164370071711C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5AE0D87DC20781EA895CD488 /* Pods-SocialLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLogin/Pods-SocialLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		B90E8ED26B7CBDE03A8AF83C /* Pods-SocialLoginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLoginTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLoginTests/Pods-SocialLoginTests.release.xcconfig"; sourceTree = "<group>"; };
-		BCCB4C361EA838D20005726F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C935430C1E773398000A6B3E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = SocialLogin/User.swift; sourceTree = "<group>"; };
 		C939E4551E9F0DE400B913B0 /* FeedSettingsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedSettingsPickerView.swift; sourceTree = "<group>"; };
 		C939F0AE1E564D2E0091EE1C /* SocialLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialLogin.entitlements; sourceTree = "<group>"; };
-		C99202BA1EA882D900BFF7CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C956F95C1EA8880B007996AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C956F95E1EA8888B007996AA /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = "../../../../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/EC854E43-BB1D-4ABD-A85F-4C619CE96F19/ChatViewController.swift"; sourceTree = "<group>"; };
+		C956F9601EA88895007996AA /* MessagesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesListTableViewController.swift; path = "../../../../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/310A9BB2-8812-42AF-9099-41929D9778BD/MessagesListTableViewController.swift"; sourceTree = "<group>"; };
+		C956F9611EA88895007996AA /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Channel.swift; path = "../../../../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/4F5A164D-612D-4288-B929-25EA3B725DBA/Channel.swift"; sourceTree = "<group>"; };
+		C956F9621EA88895007996AA /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateChannelCell.swift; path = "../../../../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/120495D9-085E-4429-8367-20AAE153F46D/CreateChannelCell.swift"; sourceTree = "<group>"; };
 		C9B440141E56453500EAD8C8 /* SocialLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B440171E56453500EAD8C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9B440191E56453500EAD8C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,12 +106,8 @@
 		C9B4400B1E56453400EAD8C8 = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				C99202BA1EA882D900BFF7CD /* GoogleService-Info.plist */,
-=======
-				BCCB4C361EA838D20005726F /* GoogleService-Info.plist */,
->>>>>>> b6ecbcaeda8f582348e2ac4ec52a209dc17d7dcc
 				C935430C1E773398000A6B3E /* User.swift */,
+				C956F95C1EA8880B007996AA /* GoogleService-Info.plist */,
 				C9B440161E56453500EAD8C8 /* SocialLogin */,
 				C9B4402B1E56453500EAD8C8 /* SocialLoginTests */,
 				C9B440151E56453500EAD8C8 /* Products */,
@@ -127,6 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				C939F0AE1E564D2E0091EE1C /* SocialLogin.entitlements */,
+				C956F9601EA88895007996AA /* MessagesListTableViewController.swift */,
+				C956F9611EA88895007996AA /* Channel.swift */,
+				C956F9621EA88895007996AA /* CreateChannelCell.swift */,
+				C956F95E1EA8888B007996AA /* ChatViewController.swift */,
 				C9B440171E56453500EAD8C8 /* AppDelegate.swift */,
 				C9B440191E56453500EAD8C8 /* ViewController.swift */,
 				C9B4401B1E56453500EAD8C8 /* Main.storyboard */,
@@ -274,11 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B440221E56453500EAD8C8 /* LaunchScreen.storyboard in Resources */,
-<<<<<<< HEAD
-				C99202BB1EA882D900BFF7CD /* GoogleService-Info.plist in Resources */,
-=======
-				BCCB4C371EA838D20005726F /* GoogleService-Info.plist in Resources */,
->>>>>>> b6ecbcaeda8f582348e2ac4ec52a209dc17d7dcc
+				C956F95D1EA8880B007996AA /* GoogleService-Info.plist in Resources */,
 				C9B4401F1E56453500EAD8C8 /* Assets.xcassets in Resources */,
 				C9B4401D1E56453500EAD8C8 /* Main.storyboard in Resources */,
 			);
@@ -393,9 +395,12 @@
 			files = (
 				C9E6AC371E9FEFB4008241D8 /* UserSelectionTableViewCell.swift in Sources */,
 				C9CFD7F61E799B8B00E9A038 /* SharedManager.swift in Sources */,
+				C956F95F1EA8888B007996AA /* ChatViewController.swift in Sources */,
 				C9FFBEA01E96D8D800FC3C66 /* FeedContentTableViewController.swift in Sources */,
 				C9CFD7FA1E79A02400E9A038 /* UserInformationTableViewCell.swift in Sources */,
 				54B0A7F41E8D95BC00C5BE7D /* FeedTableViewCell.swift in Sources */,
+				C956F9631EA88895007996AA /* MessagesListTableViewController.swift in Sources */,
+				C956F9641EA88895007996AA /* Channel.swift in Sources */,
 				54A6C9421E9176820099F747 /* Feed.swift in Sources */,
 				54E429E61E9164370071711C /* Constants.swift in Sources */,
 				C9E6AC391E9FEFCB008241D8 /* UserSelectionTableViewController.swift in Sources */,
@@ -404,6 +409,7 @@
 				C9B440181E56453500EAD8C8 /* AppDelegate.swift in Sources */,
 				54A6C9401E916FB40099F747 /* FeedTableViewController.swift in Sources */,
 				C939E4561E9F0DE400B913B0 /* FeedSettingsPickerView.swift in Sources */,
+				C956F9651EA88895007996AA /* CreateChannelCell.swift in Sources */,
 				C935430D1E773398000A6B3E /* User.swift in Sources */,
 				C9CFD7F81E799F9B00E9A038 /* UserInformationTableViewController.swift in Sources */,
 			);
