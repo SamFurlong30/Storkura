@@ -57,16 +57,21 @@ class FeedContentTableViewController: UITableViewController {
 //        toolBar.isUserInteractionEnabled = true
 //        settingsPick
         feedContentRef.child("post").observe(.value){ (snapshot : FIRDataSnapshot!) in
-            
+            if(snapshot.hasChildren()){
             var newItems = [NSString]()
+                
             for item in snapshot.children {
                 let snap = item as! FIRDataSnapshot
+                if(snap.childSnapshot(forPath: "text").exists()){
                 newItems.append(snap.childSnapshot(forPath: "text").value as! NSString);
+                }
+                
+                
             }
             self.items = newItems
             self.tableView.reloadData()
         }
-        
+        }
     }
   
     @IBAction func Post(_ sender: Any) {
