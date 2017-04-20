@@ -8,10 +8,16 @@
 
 import UIKit
 import FirebaseDatabase
+import MobileCoreServices
+import Firebase
+import FirebaseStorage
 
-class FeedContentTableViewController: UITableViewController {
+class FeedContentTableViewController: UITableViewController, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
+    
     var items = [NSString]()
     var pickerViewData = [NSString]()
+    let picker = UIImagePickerController();
 
     @IBAction func Settings(_ sender: Any) {
         let alertController = UIAlertController(title: "Settings", message: "Please select from the following options:", preferredStyle: UIAlertControllerStyle.alert)
@@ -75,37 +81,71 @@ class FeedContentTableViewController: UITableViewController {
     }
   
     @IBAction func Post(_ sender: Any) {
-        let alertController = UIAlertController(title: "Post", message: "Please enter the text for Your Post", preferredStyle: UIAlertControllerStyle.alert)
         
-        alertController.addTextField {
+        
+        self.alertController.addTextField {
             (txtFeed) -> Void in
             txtFeed.placeholder = "<Post Text Here>"
         }
-     
         
+        let addPhotoAction = UIAlertAction(title: "Choose Photo", style: UIAlertActionStyle.default){
+            (action) -> Void in
+            if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary)){
+                self.picker.sourceType = .savedPhotosAlbum
+                print(1);
+                self.picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+                print(2)
+                
+                self.picker.modalPresentationStyle = .popover
+                let ppc = self.picker.popoverPresentationController
+                ppc?.barButtonItem = sender as? UIBarButtonItem
+                self.present(self.picker, animated: true, completion: nil)
+                
+                
+            }
+        }
+        
+        let addVideoAction = UIAlertAction(title: "Choose Video", style: UIAlertActionStyle.default){
+            (action) -> Void in
+            if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary)){
+                
+                self.picker.allowsEditing = false;
+                
+                self.picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+                self.picker.sourceType = .savedPhotosAlbum;
+                
+                self.picker.modalPresentationStyle = .popover
+                let ppc = self.picker.popoverPresentationController
+                ppc?.barButtonItem = sender as? UIBarButtonItem
+                //self.present(self.picker, animated: true, completion: nil)
+                self.present(self.picker, animated: true, completion: nil)
+            }
+        }
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
             (action) -> Void in
-            alertController.dismiss(animated: true, completion:nil);
+            self.alertController.dismiss(animated: true, completion:nil);
             //if the child exists add it if not do something
-            if alertController.textFields?[0].text == nil{
+            if self.alertController.textFields?[0].text == nil{
                 return
             }
             else{
-                let name = alertController.textFields?[0].text!
+                let name = self.alertController.textFields?[0].text!
                 let date = Date()
                 let timeInterval = date.timeIntervalSince1970
                 let myTime = Int(timeInterval)
                 let myTimeString = String(myTime)
                 feedContentRef.child("post").child(myTimeString).child("text").setValue(name)
             }
-
+            
         }
         
         
-        alertController.addAction(okAction)
+        self.alertController.addAction(okAction)
+        self.alertController.addAction(addPhotoAction)
+        self.alertController.addAction(addVideoAction)
         self.present(alertController, animated: true, completion: nil);
     }
-
+    
     @IBAction func Filter(_ sender: Any) {
     }
     override func didReceiveMemoryWarning() {
@@ -151,6 +191,47 @@ class FeedContentTableViewController: UITableViewController {
         cell?.postLabel.text = feed as String
         cell?.nameLabel.text = SharedManager.sharedInstance.user.name
         return cell!
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        print("imagePickerController")
+        let myImageView = UIImageView()
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        myImageView.contentMode = .scaleAspectFit //3
+        // Create a reference to "mountains.jpg"
+        let interval:String = String(format:"%.1f", NSTimeIntervalSince1970)
+        
+        
+        // Create a reference to 'images/mountains.png'
+        let uniquepath = "images/" + interval
+        
+        let postImagesRef = storageRef.child(uniquepath)
+        let imageData = UIImagePNGRepresentation(chosenImage)!
+        //
+        let uploadTask = postImagesRef.put(imageData, metadata: nil) { (metadata, error) in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                print("error:");
+                return
+            }
+            // Metadata contains file metadata such as size, content-type, and download URL.
+            let downloadURL = metadata.downloadURL()!.absoluteString
+            
+            print(downloadURL)
+            feedContentRef.child("post").childByAutoId().child("image").setValue(downloadURL)
+        }
+        
+        
+        myImageView.image = chosenImage
+        picker.dismiss(animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil);
+        
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil);
+        
     }
     
 
