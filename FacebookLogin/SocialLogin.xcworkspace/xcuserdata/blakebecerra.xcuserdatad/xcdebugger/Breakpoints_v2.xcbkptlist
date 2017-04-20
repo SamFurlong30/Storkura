@@ -114,7 +114,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialLogin/FeedTableViewController.swift"
@@ -130,7 +130,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialLogin/FeedTableViewController.swift"
@@ -146,7 +146,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialLogin/FeedTableViewController.swift"
@@ -194,7 +194,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialLogin/FeedTableViewController.swift"
@@ -210,7 +210,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialLogin/FeedTableViewController.swift"
@@ -242,7 +242,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialLogin/FeedTableViewController.swift"
@@ -253,6 +253,38 @@
             endingLineNumber = "79"
             landmarkName = "CreateNewFeed(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialLogin.FeedTableViewController.CreateNewFeed (__ObjC.UIBarButtonItem) -&gt; ()"
+                  moduleName = "SocialLogin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/blakebecerra/Documents/SchoolWork/SP17/CS290/Storkura/FacebookLogin/SocialLogin/FeedTableViewController.swift"
+                  timestampString = "513742070.058129"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "422">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialLogin.FeedTableViewController.(CreateNewFeed (__ObjC.UIBarButtonItem) -&gt; ()).(closure #2)"
+                  moduleName = "SocialLogin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/blakebecerra/Documents/SchoolWork/SP17/CS290/Storkura/FacebookLogin/SocialLogin/FeedTableViewController.swift"
+                  timestampString = "513742070.062323"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -269,38 +301,38 @@
             endingLineNumber = "76"
             landmarkName = "CreateNewFeed(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SocialLogin.FeedTableViewController.CreateNewFeed (__ObjC.UIBarButtonItem) -&gt; ()"
-                  moduleName = "SocialLogin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/blakebecerra/Documents/SchoolWork/SP17/CS290/Storkura/FacebookLogin/SocialLogin/FeedTableViewController.swift"
-                  timestampString = "512856700.247516"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "422">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SocialLogin.FeedTableViewController.(CreateNewFeed (__ObjC.UIBarButtonItem) -&gt; ()).(closure #2)"
-                  moduleName = "SocialLogin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/blakebecerra/Documents/SchoolWork/SP17/CS290/Storkura/FacebookLogin/SocialLogin/FeedTableViewController.swift"
-                  timestampString = "512856700.251241"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialLogin/FeedTableViewController.swift"
+            timestampString = "513736643.970445"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialLogin/MessagesListTableViewController.swift"
+            timestampString = "513744692.621197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "MessagesListTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

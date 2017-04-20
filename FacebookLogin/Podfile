@@ -12,6 +12,9 @@ pod 'FBSDKLoginKit'
 pod 'Firebase'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
+pod 'Firebase/Auth'
+pod 'JSQMessagesViewController'
 
   target 'SocialLoginTests' do
     inherit! :search_paths
