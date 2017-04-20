@@ -30,7 +30,7 @@ class FeedTableViewController: UITableViewController {
             
             var newItems = [NSString]()
             for item in snapshot.children{
-                newItems.append((item as! FIRDataSnapshot).value as! NSString);
+                newItems.append((item as! FIRDataSnapshot).value as! NSString)
             }
             self.items = newItems
             self.tableView.reloadData()

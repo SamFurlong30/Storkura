@@ -16,7 +16,7 @@ class FeedContentTableViewController: UITableViewController {
     @IBAction func Settings(_ sender: Any) {
         let alertController = UIAlertController(title: "Settings", message: "Please select from the following options:", preferredStyle: UIAlertControllerStyle.alert)
         
-        let addUser = UIAlertAction(title: "Add Users", style: UIAlertActionStyle.default){
+        let addUser = UIAlertAction(title: "Add Users", style: UIAlertActionStyle.default) {
             (action) -> Void in
             self.performSegue(withIdentifier: "toUserSelection", sender: self)
         }
