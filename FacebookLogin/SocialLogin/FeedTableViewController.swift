@@ -80,10 +80,10 @@ class FeedTableViewController: UITableViewController {
             (action) -> Void in
             alertController.dismiss(animated: true, completion:nil);
             //if the child exists add it if not do something
-            if alertController.textFields?[0].text == nil{
+            if alertController.textFields?[0].text == nil {
                 return
             }
-            else{
+            else {
                 feedRef.child((alertController.textFields?[0].text)!).setValue(alertController.textFields?[0].text)
                 ref.child("feed").child((alertController.textFields?[0].text)!).child("post").child("1").setValue("fuck");
         }

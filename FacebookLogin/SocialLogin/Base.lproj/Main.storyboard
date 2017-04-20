@@ -299,17 +299,65 @@
                                 <action selector="Post:" destination="xBo-EY-p44" id="f4L-X5-pUx"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="BH9-V6-Dd4">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="BH9-V6-Dd4" userLabel="Settings">
                             <connections>
-                                <action selector="Filter:" destination="xBo-EY-p44" id="whf-SY-ypb"/>
+                                <action selector="Settings:" destination="xBo-EY-p44" id="JFU-qW-cWU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="mkk-q3-EKG" kind="show" identifier="toUserSelection" id="9In-Wh-ZId"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eb2-59-Ch9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Item" id="Asb-IU-TNr"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="2804" y="-90"/>
+=======
+            <point key="canvasLocation" x="3250" y="-254"/>
+        </scene>
+        <!--User Selection Table View Controller-->
+        <scene sceneID="elu-30-HU7">
+            <objects>
+                <tableViewController id="mkk-q3-EKG" customClass="UserSelectionTableViewController" customModule="SocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7xE-jn-s6Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserSelectionIdentifier" id="YbI-Qs-9b2" customClass="UserSelectionTableViewCell" customModule="SocialLogin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YbI-Qs-9b2" id="FQX-OB-QSP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIz-0I-3bq">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userLabel" destination="JIz-0I-3bq" id="Xth-Jy-NwS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mkk-q3-EKG" id="uWp-JS-2XC"/>
+                            <outlet property="delegate" destination="mkk-q3-EKG" id="CIn-BB-fpb"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUz-vh-eAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3960" y="-258"/>
+>>>>>>> b6ecbcaeda8f582348e2ac4ec52a209dc17d7dcc
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2e2-gN-8Te">

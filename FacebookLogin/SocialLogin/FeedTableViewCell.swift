@@ -16,12 +16,8 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var feedImage: UIImageView!
     
     @IBAction func buttonEvent(_ sender: Any) {
-        do{
-        feedContentRef = ref.child("feed").child((feedButton.titleLabel?.text)!);
-        }
-        catch let error{
-            
-        }
+        
+        feedContentRef = ref.child("feed").child((feedButton.titleLabel?.text)! as String);
     
     }
     override func awakeFromNib() {
