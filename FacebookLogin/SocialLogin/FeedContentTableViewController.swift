@@ -18,6 +18,8 @@ UINavigationControllerDelegate {
     var items = [NSString]()
     var pickerViewData = [NSString]()
     let picker = UIImagePickerController();
+    
+    let alertController = UIAlertController(title: "Post", message: "Please enter the text for Your Post", preferredStyle: UIAlertControllerStyle.alert)
 
     @IBAction func Settings(_ sender: Any) {
         let alertController = UIAlertController(title: "Settings", message: "Please select from the following options:", preferredStyle: UIAlertControllerStyle.alert)

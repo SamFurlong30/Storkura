@@ -13,12 +13,16 @@ import FirebaseAnalytics
 import FirebaseDatabase
 var ref: FIRDatabaseReference!
 var userRef: FIRDatabaseReference!
+var storage: FIRStorage!
+var storageRef: FIRStorageReference!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FIRApp.configure()
+        storage = FIRStorage.storage()
+        storageRef = storage.reference();
         ref = FIRDatabase.database().reference()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         userRef = ref.child("users")
