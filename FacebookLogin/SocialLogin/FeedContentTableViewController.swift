@@ -21,18 +21,8 @@ UINavigationControllerDelegate {
     
     let alertController = UIAlertController(title: "Post", message: "Please enter the text for Your Post", preferredStyle: UIAlertControllerStyle.alert)
 
-    @IBAction func Settings(_ sender: Any) {
-        let alertController = UIAlertController(title: "Settings", message: "Please select from the following options:", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let addUser = UIAlertAction(title: "Add Users", style: UIAlertActionStyle.default) {
-            (action) -> Void in
-            self.performSegue(withIdentifier: "toUserSelection", sender: self)
-        }
-        let filter = UIAlertAction(title: "Filter Posts", style: UIAlertActionStyle.default) { (action) -> Void in
-        }
-        alertController.addAction(addUser)
-        alertController.addAction(filter)
-        self.present(alertController, animated: true, completion: nil);
+    @IBAction func AddUser(_ sender: Any) {
+        self.performSegue(withIdentifier: "toSelectUser", sender: self)
     }
     //@IBOutlet weak var settingsPickerView: UIPickerView!
     

@@ -13,7 +13,6 @@
 		54B0A7F41E8D95BC00C5BE7D /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0A7F31E8D95BC00C5BE7D /* FeedTableViewCell.swift */; };
 		54E429E61E9164370071711C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E429E51E9164370071711C /* Constants.swift */; };
 		C935430D1E773398000A6B3E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935430C1E773398000A6B3E /* User.swift */; };
-		C939E4561E9F0DE400B913B0 /* FeedSettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939E4551E9F0DE400B913B0 /* FeedSettingsPickerView.swift */; };
 		C956F95D1EA8880B007996AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C956F95C1EA8880B007996AA /* GoogleService-Info.plist */; };
 		C956F95F1EA8888B007996AA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956F95E1EA8888B007996AA /* ChatViewController.swift */; };
 		C956F9631EA88895007996AA /* MessagesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956F9601EA88895007996AA /* MessagesListTableViewController.swift */; };
@@ -57,7 +56,6 @@
 		5AE0D87DC20781EA895CD488 /* Pods-SocialLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLogin/Pods-SocialLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		B90E8ED26B7CBDE03A8AF83C /* Pods-SocialLoginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialLoginTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialLoginTests/Pods-SocialLoginTests.release.xcconfig"; sourceTree = "<group>"; };
 		C935430C1E773398000A6B3E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = SocialLogin/User.swift; sourceTree = "<group>"; };
-		C939E4551E9F0DE400B913B0 /* FeedSettingsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedSettingsPickerView.swift; sourceTree = "<group>"; };
 		C939F0AE1E564D2E0091EE1C /* SocialLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialLogin.entitlements; sourceTree = "<group>"; };
 		C956F95C1EA8880B007996AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C956F95E1EA8888B007996AA /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = "../../../../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/EC854E43-BB1D-4ABD-A85F-4C619CE96F19/ChatViewController.swift"; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				54A6C9411E9176820099F747 /* Feed.swift */,
 				C9CFD7F91E79A02400E9A038 /* UserInformationTableViewCell.swift */,
 				C9CFD7F71E799F9B00E9A038 /* UserInformationTableViewController.swift */,
-				C939E4551E9F0DE400B913B0 /* FeedSettingsPickerView.swift */,
 				C9B4401E1E56453500EAD8C8 /* Assets.xcassets */,
 				C9B440201E56453500EAD8C8 /* LaunchScreen.storyboard */,
 				C9B440231E56453500EAD8C8 /* Info.plist */,
@@ -408,7 +405,6 @@
 				C9FFBEA21E96D96600FC3C66 /* FeedContentTableViewCell.swift in Sources */,
 				C9B440181E56453500EAD8C8 /* AppDelegate.swift in Sources */,
 				54A6C9401E916FB40099F747 /* FeedTableViewController.swift in Sources */,
-				C939E4561E9F0DE400B913B0 /* FeedSettingsPickerView.swift in Sources */,
 				C956F9651EA88895007996AA /* CreateChannelCell.swift in Sources */,
 				C935430D1E773398000A6B3E /* User.swift in Sources */,
 				C9CFD7F81E799F9B00E9A038 /* UserInformationTableViewController.swift in Sources */,

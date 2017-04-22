@@ -15,6 +15,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if (FBSDKAccessToken.current() != nil) {
+            retrieveInformation()
+        }
+        
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         view.addSubview(loginView)
         loginView.readPermissions = ["public_profile", "email"]
@@ -47,7 +51,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 self.user = self.initializeUser(fbDetails: fbDetails)
                 SharedManager.sharedInstance.user = self.user
                 self.user.printing()
-                self.performSegue(withIdentifier: "toUserInformation", sender: self)
+                if (FBSDKAccessToken.current() != nil) {
+                    userRef = userRef.child(self.user.id)
+
+                    self.performSegue(withIdentifier: "toMyFeedsFromLogin", sender: self)
+                }
+                else {
+                    self.performSegue(withIdentifier: "toUserInformation", sender: self)
+                }
             }
         })
     }
@@ -87,7 +98,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 userRef = userRef.child(id)
             }
             else{
-                userRef.child(id).child("name").setValue(name)
+            userRef.child(id).child("name").setValue(name)
                 userRef = userRef.child(id)
             }
         })

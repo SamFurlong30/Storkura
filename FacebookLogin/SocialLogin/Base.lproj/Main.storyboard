@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6GU-Ir-C5B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6GU-Ir-C5B">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,11 +27,12 @@
                     <navigationItem key="navigationItem" id="frJ-ke-Fot"/>
                     <connections>
                         <segue destination="5sf-sP-iYQ" kind="show" identifier="toUserInformation" id="O4N-ev-OYn"/>
+                        <segue destination="we1-AT-DO8" kind="show" identifier="toMyFeedsFromLogin" id="dO7-Hv-h0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="-90"/>
+            <point key="canvasLocation" x="194" y="-556"/>
         </scene>
         <!--More Information-->
         <scene sceneID="ich-qb-Qj5">
@@ -130,11 +133,18 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Feeds" id="OEB-wP-BM7">
-                        <barButtonItem key="leftBarButtonItem" title="Create New Feed " id="vVS-3D-x72">
-                            <connections>
-                                <action selector="CreateNewFeed:" destination="we1-AT-DO8" id="6JU-i9-kbk"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Messages" id="XXM-YW-uYD">
+                                <connections>
+                                    <segue destination="hli-jS-Yq4" kind="show" identifier="MessageListSegue" id="c6k-PG-ugw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="New Feed " id="vVS-3D-x72">
+                                <connections>
+                                    <action selector="CreateNewFeed:" destination="we1-AT-DO8" id="6JU-i9-kbk"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -190,26 +200,25 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="FeedName" id="Wwh-D7-O8t">
-                        <barButtonItem key="leftBarButtonItem" title="Post" id="nHf-w4-kj6">
-                            <connections>
-                                <action selector="Post:" destination="xBo-EY-p44" id="f4L-X5-pUx"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="BH9-V6-Dd4" userLabel="Settings">
-                            <connections>
-                                <action selector="Settings:" destination="xBo-EY-p44" id="JFU-qW-cWU"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Add User" id="BH9-V6-Dd4" userLabel="Add User">
+                                <connections>
+                                    <action selector="AddUser:" destination="xBo-EY-p44" id="yXE-fS-hnC"/>
+                                    <segue destination="mkk-q3-EKG" kind="show" identifier="toSelectUser" id="KhC-r9-Shd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Post" id="nHf-w4-kj6">
+                                <connections>
+                                    <action selector="Post:" destination="xBo-EY-p44" id="f4L-X5-pUx"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="mkk-q3-EKG" kind="show" identifier="toUserSelection" id="9In-Wh-ZId"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eb2-59-Ch9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <barButtonItem title="Item" id="Asb-IU-TNr"/>
             </objects>
-            <point key="canvasLocation" x="2934" y="-135"/>
+            <point key="canvasLocation" x="2894" y="484"/>
         </scene>
         <!--User Selection Table View Controller-->
         <scene sceneID="elu-30-HU7">
@@ -250,7 +259,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUz-vh-eAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3814" y="-135"/>
+            <point key="canvasLocation" x="3586" y="471"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2e2-gN-8Te">
@@ -268,8 +277,110 @@
             </objects>
             <point key="canvasLocation" x="-652" y="-90"/>
         </scene>
+        <!--Messages List Table View Controller-->
+        <scene sceneID="7hu-Us-WJb">
+            <objects>
+                <tableViewController id="hli-jS-Yq4" customClass="MessagesListTableViewController" customModule="SocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ypa-dD-aJN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="IPD-kj-8Hq" customClass="CreateChannelCell" customModule="SocialLogin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IPD-kj-8Hq" id="W3U-4l-Yak">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a New Channel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WSB-nJ-qO4">
+                                            <rect key="frame" x="16" y="7" width="297" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2q-77-aMd">
+                                            <rect key="frame" x="321" y="7" width="46" height="30"/>
+                                            <state key="normal" title="Create"/>
+                                            <connections>
+                                                <action selector="createChannel:" destination="hli-jS-Yq4" eventType="touchUpInside" id="zuW-oz-bDB"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WSB-nJ-qO4" firstAttribute="centerY" secondItem="W3U-4l-Yak" secondAttribute="centerY" id="7dL-Bw-AS4"/>
+                                        <constraint firstItem="e2q-77-aMd" firstAttribute="centerY" secondItem="W3U-4l-Yak" secondAttribute="centerY" id="Hbj-QA-6rD"/>
+                                        <constraint firstItem="e2q-77-aMd" firstAttribute="leading" secondItem="WSB-nJ-qO4" secondAttribute="trailing" constant="8" id="O81-Zc-bWc"/>
+                                        <constraint firstItem="e2q-77-aMd" firstAttribute="leading" secondItem="WSB-nJ-qO4" secondAttribute="trailing" constant="8" id="Uem-kU-mCC"/>
+                                        <constraint firstItem="e2q-77-aMd" firstAttribute="trailing" secondItem="W3U-4l-Yak" secondAttribute="trailingMargin" id="kpK-UH-fuZ"/>
+                                        <constraint firstItem="WSB-nJ-qO4" firstAttribute="leading" secondItem="W3U-4l-Yak" secondAttribute="leadingMargin" constant="8" id="njn-gu-q2g"/>
+                                        <constraint firstItem="e2q-77-aMd" firstAttribute="leading" secondItem="WSB-nJ-qO4" secondAttribute="trailing" constant="8" id="pfK-as-3PC"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="O81-Zc-bWc"/>
+                                            <exclude reference="Uem-kU-mCC"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="createChannelButton" destination="e2q-77-aMd" id="453-eS-DbQ"/>
+                                    <outlet property="newChannelNameField" destination="WSB-nJ-qO4" id="CNX-J7-IXH"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingChannel" textLabel="dZq-em-tLe" style="IBUITableViewCellStyleDefault" id="Ghv-6C-3Ke">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ghv-6C-3Ke" id="SAW-Cr-8Bm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dZq-em-tLe">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hli-jS-Yq4" id="mXr-mJ-Qgw"/>
+                            <outlet property="delegate" destination="hli-jS-Yq4" id="tjn-Yw-oGJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="vhi-SC-ctt"/>
+                    <connections>
+                        <segue destination="mnN-oC-3g0" kind="show" identifier="ShowChannel" id="31I-LI-pFE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mEd-fd-qnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3273" y="-286"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="cXM-US-qmg">
+            <objects>
+                <viewController id="mnN-oC-3g0" customClass="ChatViewController" customModule="SocialLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9FJ-Yd-qMH"/>
+                        <viewControllerLayoutGuide type="bottom" id="kzn-F3-xGd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="55S-Rf-Cr3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WWw-Ch-TpM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kii-oN-Pa8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4050" y="-102"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JIw-HJ-37K"/>
+        <segue reference="dO7-Hv-h0u"/>
+        <segue reference="wqL-jx-UAl"/>
     </inferredMetricsTieBreakers>
 </document>
