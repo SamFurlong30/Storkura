@@ -43,7 +43,6 @@ class UserSelectionTableViewController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         ref.child("users").observe(.value) {
             (snapshot : FIRDataSnapshot!) in
-            var u = [user]()
             for item in snapshot.children {
                 let snapA = (item as! FIRDataSnapshot).key as NSString
                 let snapB = item as! FIRDataSnapshot
