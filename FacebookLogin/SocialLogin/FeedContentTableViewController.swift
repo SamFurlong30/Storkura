@@ -54,6 +54,7 @@ UINavigationControllerDelegate {
 //        toolBar.setItems([doneButton], animated:true)
 //        toolBar.isUserInteractionEnabled = true
 //        settingsPick
+        self.title = feedContentRef.key
         feedContentRef.child("post").observe(.value){ (snapshot : FIRDataSnapshot!) in
             if(snapshot.hasChildren()){
             var newItems = [NSString]()
